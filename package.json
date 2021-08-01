@@ -1,0 +1,30 @@
+{
+  "name": "3-column-preview-card-component",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A three column card component.",
+  "scripts": {
+    "start": "npx webpack serve --config ./webpack.dev.js",
+    "build": "npx webpack build --config ./webpack.prod.js"
+  },
+  "keywords": [
+    "Card"
+  ],
+  "author": "Arthur Wiliams",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "browserslist": "^4.16.6",
+    "css-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.1.0",
+    "postcss": "^8.3.6",
+    "postcss-loader": "^6.1.1",
+    "postcss-preset-env": "^6.7.0",
+    "sass": "^1.37.0",
+    "sass-loader": "^12.1.0",
+    "webpack": "^5.47.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0"
+  }
+}

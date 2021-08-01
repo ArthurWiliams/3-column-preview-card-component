@@ -1,0 +1,17 @@
+$primary-bg-1: hsl(31, 77%, 52%);
+$primary-bg-2: hsl(184, 100%, 22%);
+$primary-bg-3: hsl(179, 100%, 13%);
+
+$text-color: hsla(0, 0%, 100%, 0.75);
+$heading-color: hsl(0, 0%, 95%);
+
+$base-font-size: 15px;
+
+html {
+    font-size: $base-font-size;
+    font-family: 'Lexend Deca';
+}
+
+.card {
+    border-radius: 5px;
+}
