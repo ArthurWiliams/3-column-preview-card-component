@@ -2,4 +2,5 @@
 defaults
 
 [development]
-last 2 firefox versions
+> 15% and last 2 versions
+not dead
