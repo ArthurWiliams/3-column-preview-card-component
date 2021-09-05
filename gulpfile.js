@@ -31,9 +31,8 @@ function buildAssets() {
     return src('./images/*').pipe(dest('./dist/images'));
 }
 
-function clean(cb) {
-    del('./dist/**/*');
-    cb();
+function clean() {
+    return del('./dist/*');
 }
 
 function develope(cb) {
