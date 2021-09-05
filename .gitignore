@@ -21,8 +21,5 @@ node_modules
 # Avoid build directory
 dist
 
-# Avoid introductory and template READEME for now
-README*
-
 # Avoid style guide
 style-guide.md
