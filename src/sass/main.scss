@@ -1,17 +1,138 @@
-$primary-bg-1: hsl(31, 77%, 52%);
-$primary-bg-2: hsl(184, 100%, 22%);
-$primary-bg-3: hsl(179, 100%, 13%);
+@use './variables' as var;
+@forward './base';
 
-$text-color: hsla(0, 0%, 100%, 0.75);
-$heading-color: hsl(0, 0%, 95%);
+@use 'sass:math';
+@use 'sass:map';
 
-$base-font-size: 15px;
+$card-vertical-padding: 3.1rem;
 
-html {
-    font-size: $base-font-size;
-    font-family: 'Lexend Deca';
+.container {
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .card {
-    border-radius: 5px;
+    width: 100%;
+    padding: $card-vertical-padding 3.5rem;
+
+    @for $i from 1 through 3 {
+        &--bg-color-#{$i} {
+            background-color: map.get(var.$card, 'bg-color', $i);
+        }
+    }
+
+    &__icon {
+        display: inline-block;
+        font-size: 2rem;
+    }
+
+    &__title {
+        font-size: 2.7rem;
+        margin: 1.8rem 0;
+    }
+
+    &__text {
+        color: var.$text-color;
+        margin: 1.8rem 0;
+        line-height: 1.7;
+    }
+
+    &__button {
+        $button-width: 10rem;
+
+        background-color: var.$accent-color;
+        border: 2px solid var.$accent-color;
+        border-radius: math.div($button-width, 2);
+        cursor: pointer;
+        font-family: inherit;
+        font-size: inherit;
+        padding: 0.9rem;
+        user-select: none;
+        transition-property: background-color color;
+        transition-timing-function: ease-out;
+        transition-duration: 100ms;
+        width: $button-width;
+
+        @for $i from 1 through 3 {
+            &--text-color-#{$i} {
+                color: map.get(var.$card, 'bg-color', $i);
+
+                &:active {
+                    background-color: map.get(var.$card, 'bg-color', $i);
+                    color: var.$accent-color;
+                }
+            }
+        }
+    }
+}
+
+.sr-only {
+    position: absolute;
+
+    height: 1px;
+    width: 1px;
+
+    margin: -1px;
+    padding: 0;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    /* IE */
+    clip: rect(1px 1px 1px 1px);
+
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1024px) {
+    $font-size: 16;
+
+    html {
+        font-size: $font-size + px;
+    }
+
+    html,
+    body,
+    main {
+        height: 100%;
+    }
+
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container {
+        width: 100%;
+        max-width: math.div(1010, $font-size) + rem;
+        height: math.div(530, $font-size) + rem;
+    }
+
+    .card {
+        position: relative;
+        width: math.div(100%, 3);
+        height: 100%;
+        float: left;
+
+        &__icon {
+            height: auto;
+            width: 4.1rem;
+        }
+
+        &__button {
+            position: absolute;
+            bottom: $card-vertical-padding;
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    html {
+        font-size: 17px;
+    }
 }

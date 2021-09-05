@@ -1,0 +1,25 @@
+@use './variables' as var;
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: var.$accent-color;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: var.$base-font-size;
+}
+
+body {
+    margin: 0;
+    padding: 1.5rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Big Shoulders Display', sans-serif;
+    color: var.$accent-color;
+    text-transform: uppercase;
+}
